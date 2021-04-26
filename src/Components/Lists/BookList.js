@@ -7,19 +7,17 @@ const BookList = (props) => {
         <div>
             {
                 props.books.map((book) => (
-                    <Link to={"/book/"+book.id} style={{textDecoration: 'none', color: 'Black'}} >
-                        <Book
-                            bookName={book.bookName}
-                            writer={book.writer}
-                            key={book.id}
-                            selectedBookHandler={() => props.selectedBookHandler(book)}
-
-                        />
-                    </Link>
-                )
+  
+                    <Book
+                        bookName={book.bookName}
+                        writer={book.writer}
+                        key ={book.id}
+                        selectedBookHandler={() => props.selectedBookHandler(book)}
+                        deleteBookHandler={() => props.deleteBookHandler(book)}
+                    />
+                    )
                 )
             }
-
 
         </div>
     );
